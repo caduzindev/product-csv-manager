@@ -24,7 +24,7 @@ export class Server {
   }
 
   private initServer(): void {
-    mongoose.connect('mongodb+srv://curso:curso@cluster0.vnvbd.mongodb.net/managerp?retryWrites=true&w=majority')
+    mongoose.connect(process.env.MONGO_URL)
       .then(()=>{
         let server = new InversifyExpressServer(container);
 
